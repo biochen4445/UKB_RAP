@@ -14,12 +14,12 @@
 
 # Inputs:
 # Note that you can adjust the output directory by setting the data_file_dir variable
-# - /Data/diabetes_wes_200k.phe - from part A (please refer to notebook & slides)
+# - /Data/diabetes_summaryICD_wes_450k.phe - from part A (please refer to notebook & slides)
 
 # for each chromosome, you will run a separate worker
-# - /{exome_file_dir}/ukb23155_c1_b0_v1.bed - Chr1 file for 200k release
-# - /{exome_file_dir}/ukb23155_c1_b0_v1.bim 
-# - /{exome_file_dir}/ukb23155_c1_b0_v1.bam 
+# - /{exome_file_dir}/ukb23155_c1_b0_v2.bed - Chr1 file for 450k release
+# - /{exome_file_dir}/ukb23155_c1_b0_v2.bim 
+# - /{exome_file_dir}/ukb23155_c1_b0_v2.bam 
 # - /Data/ukb22418_c1_22_merged.bed - from part B
 # - /Data/ukb22418_c1_22_merged.bed - from part B
 
@@ -36,15 +36,15 @@ data_field="ukb23149"
 data_file_dir="/Data/"
 
 for i in {1..22}; do
-    run_plink_wes="plink2 --bfile ukb${data_field}_c${i}_b0_v1\
+    run_plink_wes="plink2 --bfile ukb${data_field}_c${i}_b0_v2\
       --no-pheno --keep diabetes_summaryICD_wes_450k.phe --autosome\
       --maf 0.01 --mac 20 --geno 0.1 --hwe 1e-15 --mind 0.1\
       --write-snplist --write-samples --no-id-header\
       --out WES_c${i}_snps_qc_pass"
 
-    dx run swiss-army-knife -iin="${exome_file_dir}/${data_field}_c${i}_b0_v1.bed" \
-     -iin="${exome_file_dir}/${data_field}_c${i}_b0_v1.bim" \
-     -iin="${exome_file_dir}/${data_field}_c${i}_b0_v1.fam"\
+    dx run swiss-army-knife -iin="${exome_file_dir}/${data_field}_c${i}_b0_v2.bed" \
+     -iin="${exome_file_dir}/${data_field}_c${i}_b0_v2.bim" \
+     -iin="${exome_file_dir}/${data_field}_c${i}_b0_v2.fam"\
      -iin="${data_file_dir}/diabetes_summaryICD_wes_450k.phe" \
      -icmd=${run_plink_wes} --tag="Step2" --instance-type "mem1_ssd1_v2_x16"\
      --destination="${project}:/Data/" --brief --yes
