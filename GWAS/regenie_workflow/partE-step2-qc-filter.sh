@@ -30,14 +30,14 @@
 
 
 #set this to the exome sequence directory that you want (should contain PLINK formatted files)
-exome_file_dir="/Bulk/Exome sequences/Population level exome OQFE variants, PLINK format - interim 200k release/"
+exome_file_dir="/Bulk/Exome sequences/Population level exome OQFE variants, PLINK format - interim 450k release/"
 #set this to the exome data field for your release
-data_field="ukb23155"
+data_field="ukb23149"
 data_file_dir="/Data/"
 
 for i in {1..22}; do
     run_plink_wes="plink2 --bfile ukb${data_field}_c${i}_b0_v1\
-      --no-pheno --keep diabetes_wes_200k.phe --autosome\
+      --no-pheno --keep diabetes_summaryICD_wes_450k.phe --autosome\
       --maf 0.01 --mac 20 --geno 0.1 --hwe 1e-15 --mind 0.1\
       --write-snplist --write-samples --no-id-header\
       --out WES_c${i}_snps_qc_pass"
@@ -45,7 +45,7 @@ for i in {1..22}; do
     dx run swiss-army-knife -iin="${exome_file_dir}/${data_field}_c${i}_b0_v1.bed" \
      -iin="${exome_file_dir}/${data_field}_c${i}_b0_v1.bim" \
      -iin="${exome_file_dir}/${data_field}_c${i}_b0_v1.fam"\
-     -iin="${data_file_dir}/diabetes_wes_200k.phe" \
+     -iin="${data_file_dir}/diabetes_summaryICD_wes_450k.phe" \
      -icmd=${run_plink_wes} --tag="Step2" --instance-type "mem1_ssd1_v2_x16"\
      --destination="${project}:/Data/" --brief --yes
 done
