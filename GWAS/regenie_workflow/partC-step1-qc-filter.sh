@@ -1,5 +1,5 @@
 #!/bin/sh
-data_field="23149"
+data_field="22418"
 
 # This script runs the QC process using PLINK on the merged file generated in 
 # partB-merge-files-dxfuse.sh as described in the 
