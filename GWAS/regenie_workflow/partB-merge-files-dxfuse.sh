@@ -7,7 +7,7 @@
 # Run this script using: sh 01-merge-files-dxfuse.sh on the command line
 
 # Inputs
-# - /Data/diabetes_wes_200k.phe - not strictly needed, but swiss-army-knife needs at least one input
+# - /Data/diabetes_summaryICD_wes_450k.phe - not strictly needed, but swiss-army-knife needs at least one input
 
 # Outputs
 # - ukb22418_c1_22_v2_merged.bed - used as input for parts C and D
