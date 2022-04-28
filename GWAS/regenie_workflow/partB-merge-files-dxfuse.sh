@@ -4,7 +4,7 @@
 # Please refer to readme.md for more information about the requirements
 
 # How to Run:
-# Run this script using: sh 01-merge-files-dxfuse.sh on the command line
+# Run this script using: sh partB-merge-files-dxfuse.sh on the command line
 
 # Inputs
 # - /Data/diabetes_summaryICD_wes_450k.phe - not strictly needed, but swiss-army-knife needs at least one input
