@@ -12,6 +12,12 @@
 # sh partC-step1-qc-filter.sh 
 # on the command line on your machine
 
+# inputs:
+# - /Data/ukb22148__c1_22_v2_merged.bed - outputs from partB
+# - /Data/ukb22148__c1_22_v2_merged.fam - outputs from partB
+# - /Data/ukb22148__c1_22_v2_merged.bim - outputs from partB
+# - /Data/diabetes_summaryICD_wes_450k.phe
+
 # Outputs: 
 # - /Data/WES_array_snps_qc_pass.snplist - Used as input for part D 
 # - /Data/WES_array_snps_qc_pass.log
