@@ -33,9 +33,10 @@
 
 #change exome_file_dir and data_field for the newest release
 exome_file_dir="/Bulk/Exome sequences/Population level exome OQFE variants, PLINK format - interim 450k release/"
-data_field="23149"
-data_file_dir="/Data/"
 
+data_field="23149"
+
+data_file_dir="/Data/"
 
 for chr in {1..22}; do
   run_regenie_cmd="regenie --step 2 --bed ukb${data_field}_c${chr}_b0_v1 --out assoc.c${chr}\
