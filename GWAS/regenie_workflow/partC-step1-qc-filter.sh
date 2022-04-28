@@ -20,6 +20,7 @@
 #set output directory (also location of merged files)
 data_file_dir="/Data/"
 
+# set the data_field
 data_field="22418"
 
 run_plink_qc="plink2 --bfile ukb${data_field}_c1_22_v2_merged\
