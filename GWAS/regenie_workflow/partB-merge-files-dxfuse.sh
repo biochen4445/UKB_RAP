@@ -14,6 +14,9 @@
 # - ukb22418_c1_22_v2_merged.bim - used as input for parts C and D
 # - ukb22418_c1_22_v2_merged.fam - used as input for parts C and D
 
+#set output directory (also location of merged files)
+data_file_dir="/Data/"
+
 #cmd to run (use as input with `-icmd=$run_merge`)
 run_merge="cp /mnt/project/Bulk/Genotype\ Results/Genotype\ calls/ukb22418_c[1-9]* . ;\
         ls *.bed | sed -e 's/.bed//g'> files_to_merge.txt; \
@@ -21,6 +24,6 @@ run_merge="cp /mnt/project/Bulk/Genotype\ Results/Genotype\ calls/ukb22418_c[1-9
         --autosome-xy --out ukb22418_c1_22_v2_merged;\
         rm files_to_merge.txt;"
 
-dx run swiss-army-knife -iin="/Data/diabetes_summaryICD_wes_450k.phe" \
+dx run swiss-army-knife -iin="${data_file_dir}diabetes_summaryICD_wes_450k.phe" \
    -icmd="${run_merge}" --tag="Step1" --instance-type "mem1_ssd1_v2_x16"\
-   --destination="/Data/" --brief --yes 
+   --destination="${data_file_dir}" --brief --yes 
