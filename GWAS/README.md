@@ -1,3 +1,6 @@
+all potocols are modified from UKB_RAP.
+some error are corrected by hung-Lin chen
+
 This folder contains materials for [GWAS on the Research Analysis Platform using regenie](https://community.dnanexus.com/s/question/0D5t000003QwakWCAR/webinar-nov-2-gwas-on-the-research-analysis-platform-using-regenie)
 
 
