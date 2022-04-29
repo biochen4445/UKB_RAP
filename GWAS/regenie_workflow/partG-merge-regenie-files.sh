@@ -34,6 +34,7 @@ gunzip *.regenie.gz; \
 
 #add the header back to the top of the merged file
 echo -e "CHROM\tGENPOS\tID\tALLELE0\tALLELE1\tA1FREQ\tN\tTEST\tBETA\tSE\tCHISQ\tLOG10P\tEXTRA" > $out_file; \
+
 files="./*.regenie" \
 
 for f in $files; do \
