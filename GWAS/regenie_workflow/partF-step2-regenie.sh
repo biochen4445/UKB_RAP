@@ -10,7 +10,7 @@
 
 # How to Run:
 # Run this shell script using: 
-#   sh partF-step2-regenie.sh 
+#   bash partF-step2-regenie.sh 
 # on the command line on your own machine
 
 # Inputs:
